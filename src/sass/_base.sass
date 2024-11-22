@@ -6,6 +6,16 @@ $color-blue-dark: #101D2C
 $color-gray-dark: #AAAAAA
 $color-gray-light: #F5F5F5
 
+$font-weight-400: 400
+$font-weight-700: 700
+$font-size: 1.6rem
+
+@mixin font($font-weight, $font-size, $color)
+	font-weight: $font-weight
+	line-height: 1.13
+	font-size: $font-size
+	color: $color
+
 *, *::after, *::before
 	margin: 0
 	padding: 0
@@ -15,19 +25,23 @@ html
 	font-size: 62.5%
 body
 	font-family: "Montserrat",sans-serif
-	font-weight: 400
-	color: $color-gray-light
-	line-height: 113%
-	font-size: 1.6rem
+	@include font($font-weight-400, 1.6rem, $color-gray-dark)
+	background-color: $color-gray-light
 
 .container
 	display: grid
 	grid-template-rows: 80vh min-content 40vw repeat(3, min-content)
 	grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end]
-	& > *
-		font-size: 1.6rem
-		color: red
 
 .visually-hidden
 	position: fixed
 	transform: scale(0)
+
+.title-1
+	@include font($font-weight-700, 4.5rem, $color-gray-light)
+
+.title-2
+	@include font($font-weight-700, 4rem, $color-gray-light)
+	line-height: 1
+.title-3
+	@include font($font-weight-700, 1.9rem, $color-green-dark)

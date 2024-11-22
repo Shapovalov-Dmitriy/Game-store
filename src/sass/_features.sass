@@ -1,8 +1,23 @@
 .feature
-  background-color: $color-gray-light
   grid-column: center-start / center-end
   padding: 15rem 0
   &__list
     display: grid
-    grid-template-columns: repeat(3, 1fr)
-    grid-gap: 3rem 4rem
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
+    grid-gap: 3rem
+    align-items: start
+  &__item
+    display: grid
+    grid-template-columns: min-content 1fr
+    grid-gap: 1.5rem 2.5rem
+  &__icon
+    width: 4.5rem
+    height: 4.5rem
+    grid-row: 1 / span 2
+    transform: translateY(-1rem)
+  &__text
+    @include font($font-weight-400, 1.6rem, $color-green-dark)
+    &_white
+      color: $color-gray-light
+    &_green-light
+      color: $color-green-light
