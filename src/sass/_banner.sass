@@ -5,3 +5,12 @@
   &-text
     background-color: $color-blue-dark
     grid-column: col-start 5 / full-end
+    padding: 4vw
+    display: grid
+    align-content: center
+    justify-items: start
+    &__content
+      max-width: 48.8rem
+    &__text
+      @include font($font-weight-400, $font-size, $color-gray-light)
+      margin-bottom: 4rem
