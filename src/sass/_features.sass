@@ -6,8 +6,6 @@
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
     grid-gap: 3rem
     align-items: start
-    list-style: none
-    padding: 0
   &__item
     display: grid
     grid-template-columns: min-content 1fr
@@ -18,7 +16,7 @@
     grid-row: 1 / span 2
     transform: translateY(-1rem)
   &__text
-    @include font($font-weight-400, 1.6rem, $color-green-dark)
+    @include font($font-weight-400, $font-size, $color-green-dark)
     &_white
       color: $color-gray-light
     &_green-light

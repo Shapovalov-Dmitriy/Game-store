@@ -1,3 +1,55 @@
 .cards
   background-color: $color-gray-light
   grid-column: center-start / center-end
+  padding: 15rem 0
+
+.card
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
+  grid-gap: 4rem 6rem
+  &__item
+    background-color: $color-blue-dark
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+  &__wrapper-img
+    grid-column: 1 / -1
+    grid-row: 1 / 2
+    overflow: hidden
+    &:hover img
+      transition: all .2s
+      transform: scale(1.1)
+  &__img
+    transition: all .5s
+  &__title
+    grid-column: 1 / -1
+    grid-row: 1 / 2
+    align-self: end
+    justify-self: center
+    width: 80%
+    padding: 1.5rem 1rem
+    background-color: $color-green-dark
+    @include font($font-weight-700, $font-size, $color-gray-light)
+    text-transform: uppercase
+    text-align: center
+    transform: translateY(50%)
+  &__content
+    grid-column: 1 / -1
+    padding: 5.7rem 3rem 3rem
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-content: space-between
+    grid-gap: 4.5rem 1rem
+  &__content-item
+    display: flex
+    align-items: center
+    column-gap: 1rem
+  &__content-svg
+    width: 2rem
+    height: 2rem
+
+  &__content-text
+    @include font($font-weight-300, $font-size, $color-gray-light)
+
+  &__btn
+    grid-column: 1 / -1
+    text-align: center
