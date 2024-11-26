@@ -2,15 +2,18 @@
   background-color: $color-gray-light
   grid-column: center-start / center-end
   padding: 15rem 0
+  @include respond(tablet)
+    padding: 8rem 3rem
 
 .card
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr))
   grid-gap: 4rem 6rem
   &__item
     background-color: $color-blue-dark
     display: grid
     grid-template-columns: repeat(2, 1fr)
+
   &__wrapper-img
     grid-column: 1 / -1
     grid-row: 1 / 2
@@ -39,6 +42,12 @@
     grid-template-columns: repeat(2, 1fr)
     justify-content: space-between
     grid-gap: 4.5rem 1rem
+    @include respond(tablet)
+      justify-items: center
+
+    @include respond(phone)
+      padding-left: 1rem
+      padding-right: 1rem
   &__content-item
     display: flex
     align-items: center

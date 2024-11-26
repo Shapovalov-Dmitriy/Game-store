@@ -1,6 +1,8 @@
 .feature
   grid-column: center-start / center-end
   padding: 15rem 0
+  @include respond(tablet)
+    padding: 8rem 0
   &__list
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))

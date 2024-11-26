@@ -7,9 +7,17 @@
   background: url(../img/header/header-bg.jpg) center / cover no-repeat
   @include respond(tablet)
     grid-column: full-start / full-end
+
+  &__title
+    @include respond(tablet)
+      margin-bottom: 2rem
+      display: block
+
   &__btn
     align-self: start
     justify-self: start
+    @include respond(tablet)
+      margin-bottom: 3rem
 
   &__text-line
     display: grid

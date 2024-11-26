@@ -15,14 +15,14 @@
     padding-right: 3rem
 .burger
   position: fixed
-  background-color: transparent
+  background-color: $color-green-dark
   border: none
-  width: 5rem
-  height: 3.7rem
+  width: 7rem
+  height: 5.7rem
+  padding: 1rem
+  z-index: 100
   outline: none
   cursor: pointer
-  @include respond(screen)
-    position: static
   &__line
     display: block
     height: 0.3rem
@@ -53,13 +53,15 @@
 
 .sidebar-menu
   position: fixed
-  top: -100%
-  left: 8rem
+  top: 0
+  left: -100%
   z-index: 100
   transition: all .5s
+  visibility: hidden
   @include respond(screen)
+    top: -100%
     left: 0
-
+    width: 70%
   &__list
     width: 100%
     height: 100%
@@ -67,6 +69,8 @@
     border-radius: 0 0 2rem 0
     padding: 5rem 2rem
     text-align: center
+    @include respond(screen)
+      padding: 8rem 2rem
   &__item
     &:not(:last-child)
       margin-bottom: 3rem
@@ -81,7 +85,9 @@
       color: $color-green-light
       transform: translateY(-0.3rem)
 .sidebar-menu-active
-  top: 0
+  left: 8rem
   transition: all .2s
+  visibility: visible
   @include respond(screen)
-    top: 6rem
+    left: 0
+    top: 0
