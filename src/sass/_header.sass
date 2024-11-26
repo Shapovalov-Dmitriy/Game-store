@@ -1,8 +1,33 @@
 .header
   background-color: $color-blue-dark
   grid-column: full-start / col-end 6
-// .logo
-//   display: block
-//   &__img
-//     display: block
-//     margin: 0 auto
+  padding: 5rem
+  display: grid
+  grid-template-rows: 1fr min-content minmax(10rem, min-content) 1fr
+  background: url(../img/header/header-bg.jpg) center / cover no-repeat
+  @include respond(tablet)
+    grid-column: full-start / full-end
+  &__btn
+    align-self: start
+    justify-self: start
+
+  &__text-line
+    display: grid
+    grid-template-columns: 1fr max-content 1fr
+    grid-gap: 2rem
+    align-items: center
+    margin-bottom: 1rem
+    @include font($font-weight-700, $font-size, $color-gray-dark)
+    &::after, &::before
+      content: ''
+      display: block
+      height: .1rem
+      background-color: $color-gray-dark
+.brands
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  justify-items: center
+  grid-gap: 2rem
+  &__item
+    img
+      height: 2.5rem

@@ -11,12 +11,6 @@ $font-weight-400: 400
 $font-weight-700: 700
 $font-size: 1.6rem
 
-@mixin font($font-weight, $font-size, $color)
-	font-weight: $font-weight
-	line-height: 1.13
-	font-size: $font-size
-	color: $color
-
 *, *::after, *::before
 	margin: 0
 	padding: 0
@@ -24,6 +18,10 @@ $font-size: 1.6rem
 
 html
 	font-size: 62.5%
+	@include respond(screen)
+		font-size: 50%
+	@include respond(tablet)
+		// font-size: 47.5%
 body
 	font-family: "Montserrat",sans-serif
 	background-color: $color-gray-light
@@ -46,7 +44,8 @@ img
 	display: grid
 	grid-template-rows: 80vh min-content 40vw repeat(3, min-content)
 	grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end]
-
-.visually-hidden
-	position: fixed
-	transform: scale(0)
+	@include respond(screen)
+		grid-template-rows: 6rem calc(100vh - 6rem) min-content 40vw repeat(3, min-content)
+		grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end]
+	@include respond(tablet)
+		grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content)
